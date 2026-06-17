@@ -1,535 +1,190 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이조코퍼레이션 | 기업 언론 홍보 & 마케팅 컨설팅 플랫폼</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-color: #0052cc;
-            --secondary-color: #00c49f;
-            --dark-bg: #0f172a;
-            --light-bg: #f8fafc;
-            --text-main: #334155;
-            --text-muted: #64748b;
-            --white: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이조코퍼레이션 | 기업 언론 홍보 &amp; 마케팅 컨설팅 플랫폼</title>
+<meta name="description" content="이조코퍼레이션(EZO CORP)은 미디어 네트워크와 데이터 정밀 분석을 결합하여 기업의 인지도를 혁신하고 매출 전환을 이끄는 언론 홍보, 마케팅 컨설팅, 유통판로개척 전문 플랫폼입니다.">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Noto Sans KR', sans-serif;
-            scroll-behavior: smooth;
-        }
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-        body {
-            color: var(--text-main);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        /* Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--white);
-        }
-
-        .btn-consulting {
-            background-color: var(--primary-color);
-            color: var(--white) !important;
-            padding: 8px 18px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .btn-consulting:hover {
-            background-color: #0043a4;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            color: var(--white);
-            padding: 120px 20px 80px 20px;
-            text-align: center;
-        }
-
-        .hero-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 24px;
-            word-break: keep-all;
-        }
-
-        .hero h1 span {
-            color: #38bdf8;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #94a3b8;
-            margin-bottom: 40px;
-            word-break: keep-all;
-        }
-
-        .hero .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .btn-main {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .btn-main:hover {
-            background-color: #0043a4;
-            transform: translateY(-2px);
-        }
-
-        .btn-sub {
-            background-color: transparent;
-            color: var(--white);
-            border: 1px solid #475569;
-        }
-
-        .btn-sub:hover {
-            background-color: rgba(255,255,255,0.05);
-            border-color: var(--white);
-        }
-
-        /* Section Global */
-        section {
-            padding: 100px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #1e293b;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            font-size: 16px;
-        }
-
-        /* Core Services */
-        .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #f1f5f9;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        .service-icon {
-            font-size: 40px;
-            color: var(--primary-color);
-            margin-bottom: 25px;
-        }
-
-        .service-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #1e293b;
-        }
-
-        .service-card ul {
-            list-style: none;
-            color: var(--text-muted);
-        }
-
-        .service-card ul li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .service-card ul li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        /* Process Section */
-        .process-section {
-            background-color: var(--light-bg);
-        }
-
-        .process-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .process-step {
-            flex: 1;
-            min-width: 240px;
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background-color: var(--dark-bg);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            font-weight: 700;
-        }
-
-        .process-step h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #1e293b;
-        }
-
-        .process-step p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        /* Contact Section */
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border: 1px solid #f1f5f9;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #1e293b;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            border-color: var(--primary-color);
-        }
-
-        .btn-submit {
-            width: 100%;
-            background-color: var(--dark-bg);
-            color: var(--white);
-            border: none;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn-submit:hover {
-            background-color: #1e293b;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-bg);
-            color: #94a3b8;
-            padding: 50px 20px;
-            font-size: 14px;
-            border-top: 1px solid #1e293b;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-info p {
-            margin-bottom: 5px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 16px; }
-            .hero .cta-buttons { flex-direction: column; }
-            .process-container { flex-direction: column; }
-            .footer-container { flex-direction: column; text-align: center; }
-        }
-    </style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">EZO<span>CORP</span></a>
-            <ul class="nav-links">
-                <li><a href="#services">주요서비스</a></li>
-                <li><a href="#process">컨설팅 절차</a></li>
-                <li><a href="#contact" class="btn-consulting">무료 상담 신청</a></li>
-            </ul>
-        </div>
-    </header>
+<a class="skip-link" href="#main">본문으로 바로가기</a>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <h1>기업의 가치를 <span>뉴스룸</span>으로,<br>브랜드의 성장을 <span>전략</span>으로.</h1>
-            <p>이조코퍼레이션(EZO CORP)은 미디어 네트워크와 데이터 정밀 분석을 결합하여, 기업의 인지도를 혁신하고 확실한 매출 전환을 이끄는 탑티어 언론 홍보 및 마케팅 컨설팅 플랫폼입니다.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-main">프로젝트 문의하기</a>
-                <a href="#services" class="btn btn-sub">서비스 알아보기</a>
-            </div>
-        </div>
-    </section>
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="이조코퍼레이션 홈으로 이동">
+      <img src="assets/logo-horizontal-light.png" alt="이조코퍼레이션 EZO CORP" class="brand-logo" width="1100" height="257">
+    </a>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="section-title">
-            <h2>주요 서비스</h2>
-            <p>이조코퍼레이션만의 검증된 통합 브랜딩 솔루션을 제공합니다.</p>
-        </div>
-        <div class="services-grid">
-            <!-- Card 1 -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-newspaper"></i></div>
-                <h3>전략적 언론 홍보 (PR)</h3>
-                <ul>
-                    <li>신제품 · 브랜드 런칭 기획 보도자료</li>
-                    <li>CEO 인터뷰 및 전문 기획 기사 발행</li>
-                    <li>기업 위기 관리 및 실시간 미디어 모니터링</li>
-                    <li>주요 포털 매체 네이티브 뉴스 송출</li>
-                </ul>
-            </div>
-            <!-- Card 2 -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <h3>마케팅 컨설팅</h3>
-                <ul>
-                    <li>시장 데이터 기반 브랜드 포지셔닝 구축</li>
-                    <li>통합 마케팅 커뮤니케이션(IMC) 전략 수립</li>
-                    <li>효율 중심의 퍼포먼스 마케팅 타겟팅 설계</li>
-                    <li>신규 비즈니스 고도화 및 고투마켓 전략</li>
-                </ul>
-            </div>
-            <!-- Card 3 -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-video"></i></div>
-                <h3>미디어 및 콘텐츠 브랜딩</h3>
-                <ul>
-                    <li>바이럴 유도형 디지털 콘텐츠 기획</li>
-                    <li>브랜드 가치를 담은 기업 홍보 영상 제작</li>
-                    <li>고객 참여형 소셜 미디어 캠페인 운영</li>
-                    <li>대형 오프라인 이벤트 및 문화 행사 연계 홍보</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <nav class="main-nav" id="main-nav">
+      <a href="#services">주요서비스</a>
+      <a href="#process">컨설팅 절차</a>
+    </nav>
 
-    <!-- Process Section -->
-    <section id="process" class="process-section">
-        <div class="section-title">
-            <h2>컨설팅 프로세스</h2>
-            <p>체계적이고 투명한 단계를 거쳐 최고의 성과를 도출합니다.</p>
-        </div>
-        <div class="process-container">
-            <div class="process-step">
-                <div class="step-number">01</div>
-                <h4>상담 및 현황 분석</h4>
-                <p>기업의 비즈니스 모델 분석 및 홍보 목적 수립</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">02</div>
-                <h4>맞춤형 전략 수립</h4>
-                <p>미디어 믹스, 메시지 라인업 및 예산 최적화 설계</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">03</div>
-                <h4>캠페인 실행</h4>
-                <p>보도자료 송출 및 타겟 마케팅 매체 즉시 집행</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">04</div>
-                <h4>결과 분석 보고</h4>
-                <p>노출 성과 측정 및 향후 브랜딩 방향성 리포트 제공</p>
-            </div>
-        </div>
-    </section>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-title">
-            <h2>프로젝트 문의</h2>
-            <p>지금 이조코퍼레이션의 전문가 팀과 비즈니스 성장을 논의해보세요.</p>
-        </div>
-        <div class="contact-container">
-            <!-- 폼 전송을 위해 추후 백엔드 연동 가능 (기본형) -->
-            <form action="#" method="POST" onsubmit="alert('상담 신청이 완료되었습니다. 담당자가 신속히 연락드리겠습니다.'); return false;">
-                <div class="form-group">
-                    <label for="company">회사명 / 기관명</label>
-                    <input type="text" id="company" required placeholder="예: 이조코퍼레이션">
-                </div>
-                <div class="form-group">
-                    <label for="name">담당자명 / 직함</label>
-                    <input type="text" id="name" required placeholder="예: 홍길동 팀장">
-                </div>
-                <div class="form-group">
-                    <label for="email">이메일 주소</label>
-                    <input type="email" id="email" required placeholder="example@domain.com">
-                </div>
-                <div class="form-group">
-                    <label for="service-type">관심 서비스</label>
-                    <select id="service-type">
-                        <option value="all">종합 턴키 컨설팅 (PR+마케팅)</option>
-                        <option value="pr">언론 홍보 (보도자료 / 인터뷰)</option>
-                        <option value="marketing">마케팅 전략 및 퍼포먼스 광고</option>
-                        <option value="media">콘텐츠 및 영상 제작 브랜딩</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">의뢰 내용 (상세)</label>
-                    <textarea id="message" rows="5" required placeholder="홍보 목적, 예산 규모, 희망 시작 시기 등을 적어주시면 더 정확한 상담이 가능합니다."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">무료 상담 및 포트폴리오 신청</button>
-            </form>
-        </div>
-    </section>
+<main id="main">
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <strong style="color: #fff; font-size: 16px; display: block; margin-bottom: 10px;">이조코퍼레이션 (EZO CORP)</strong>
-                <p>이메일: info@ezocorp.kr</p>
-                <p>본 사이트는 기업 언론 홍보 및 마케팅 컨설팅 안내를 위한 공식 플랫폼입니다.</p>
-            </div>
-            <div class="footer-copyright">
-                &copy; 2026 EZO CORP. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow mono">EZO CORP <span class="dot">·</span> PR <span class="dot">/</span> MARKETING <span class="dot">/</span> DISTRIBUTION</p>
 
+      <h1 class="hero-title">
+        기업의 가치를 <span class="grad-text">뉴스룸</span>으로,<br>
+        브랜드의 성장을 <span class="grad-text">전략</span>으로.
+      </h1>
+
+      <p class="hero-sub">
+        이조코퍼레이션(EZO CORP)은 미디어 네트워크와 데이터 정밀 분석을 결합하여, 기업의 인지도를 혁신하고
+        확실한 매출 전환을 이끄는 탑티어 언론 홍보 및 마케팅 컨설팅 플랫폼입니다.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#services" class="btn btn-primary">주요 서비스 보기</a>
+        <a href="#process" class="btn btn-ghost">컨설팅 프로세스</a>
+      </div>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>전략적 언론홍보</span><span class="sep">/</span>
+        <span>마케팅 컨설팅</span><span class="sep">/</span>
+        <span>미디어·콘텐츠 브랜딩</span><span class="sep">/</span>
+        <span>유통·판로개척</span><span class="sep">/</span>
+        <span>데이터 정밀 분석</span><span class="sep">/</span>
+        <span>탑티어 PR 파트너</span><span class="sep">/</span>
+        <span>전략적 언론홍보</span><span class="sep">/</span>
+        <span>마케팅 컨설팅</span><span class="sep">/</span>
+        <span>미디어·콘텐츠 브랜딩</span><span class="sep">/</span>
+        <span>유통·판로개척</span><span class="sep">/</span>
+        <span>데이터 정밀 분석</span><span class="sep">/</span>
+        <span>탑티어 PR 파트너</span><span class="sep">/</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-inner">
+      <p class="eyebrow mono">SERVICES</p>
+      <h2 class="section-title">주요 서비스</h2>
+      <p class="section-sub">이조코퍼레이션만의 검증된 통합 브랜딩 솔루션을 제공합니다.</p>
+
+      <div class="card-grid">
+
+        <article class="card reveal">
+          <p class="card-tag mono">SERVICE / 01</p>
+          <h3>전략적 언론 홍보 (PR)</h3>
+          <ul>
+            <li>신제품 · 브랜드 런칭 기획 보도자료</li>
+            <li>CEO 인터뷰 및 전문 기획 기사 발행</li>
+            <li>기업 위기 관리 및 실시간 미디어 모니터링</li>
+            <li>주요 포털 매체 네이티브 뉴스 송출</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <p class="card-tag mono">SERVICE / 02</p>
+          <h3>마케팅 컨설팅</h3>
+          <ul>
+            <li>시장 데이터 기반 브랜드 포지셔닝 구축</li>
+            <li>통합 마케팅 커뮤니케이션(IMC) 전략 수립</li>
+            <li>효율 중심의 퍼포먼스 마케팅 타겟팅 설계</li>
+            <li>신규 비즈니스 고도화 및 고투마켓 전략</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <p class="card-tag mono">SERVICE / 03</p>
+          <h3>미디어 및 콘텐츠 브랜딩</h3>
+          <ul>
+            <li>바이럴 유도형 디지털 콘텐츠 기획</li>
+            <li>브랜드 가치를 담은 기업 홍보 영상 제작</li>
+            <li>고객 참여형 소셜 미디어 캠페인 운영</li>
+            <li>대형 오프라인 이벤트 및 문화 행사 연계 홍보</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <p class="card-tag mono">SERVICE / 04</p>
+          <h3>유통 · 판로 개척</h3>
+          <ul>
+            <li>온라인 플랫폼(스마트스토어 · 쿠팡 등) 입점 전략 수립</li>
+            <li>오프라인 유통망(백화점 · 마트 · 편의점) 입점 제안 및 협상 지원</li>
+            <li>바이어 매칭 및 B2B 거래선 발굴</li>
+            <li>입점 제안서 및 MD 미팅 자료 제작 지원</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="process">
+    <div class="section-inner">
+      <p class="eyebrow mono">PROCESS</p>
+      <h2 class="section-title">컨설팅 프로세스</h2>
+      <p class="section-sub">체계적이고 투명한 단계를 거쳐 최고의 성과를 도출합니다.</p>
+
+      <ol class="timeline">
+        <li class="timeline-step reveal">
+          <span class="timeline-num mono">01</span>
+          <div class="timeline-body">
+            <h3>상담 및 현황 분석</h3>
+            <p>기업의 비즈니스 모델 분석 및 홍보 목적 수립</p>
+          </div>
+        </li>
+        <li class="timeline-step reveal">
+          <span class="timeline-num mono">02</span>
+          <div class="timeline-body">
+            <h3>맞춤형 전략 수립</h3>
+            <p>미디어 믹스, 메시지 라인업 및 예산 최적화 설계</p>
+          </div>
+        </li>
+        <li class="timeline-step reveal">
+          <span class="timeline-num mono">03</span>
+          <div class="timeline-body">
+            <h3>캠페인 실행</h3>
+            <p>보도자료 송출 및 타겟 마케팅 매체 즉시 집행</p>
+          </div>
+        </li>
+        <li class="timeline-step reveal">
+          <span class="timeline-num mono">04</span>
+          <div class="timeline-body">
+            <h3>결과 분석 보고</h3>
+            <p>노출 성과 측정 및 향후 브랜딩 방향성 리포트 제공</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="assets/logo-icon-light.png" alt="" class="footer-mark" width="1000" height="893" aria-hidden="true">
+    <p class="footer-name">(주)이조코퍼레이션 <span class="mono">EZO CORP</span></p>
+    <p class="footer-desc">본 사이트는 기업 언론 홍보, 마케팅 컨설팅 및 유통판로개척 안내를 위한 공식 플랫폼입니다.</p>
+    <p class="footer-copy mono">© 2026 EZO CORP. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
